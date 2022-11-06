@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nova-categoria',
   templateUrl: './nova-categoria.component.html',
-  styleUrls: ['../listagem-categoria/listagem-categoria.component.css'],
+  styleUrls: ['../listagem-categoria/listagem-categoria.component.css']
 })
 export class NovaCategoriaComponent implements OnInit {
   formulario: any;
@@ -42,5 +42,9 @@ export class NovaCategoriaComponent implements OnInit {
     this.categoriasService.NovaCategoria(categoria).subscribe((resultado) => {
       this.router.navigate(['categorias/listagemcategorias']);
     });
+  }
+
+  VoltarListagem(): void {
+    this.router.navigate(['categorias/listagemcategorias']);
   }
 }

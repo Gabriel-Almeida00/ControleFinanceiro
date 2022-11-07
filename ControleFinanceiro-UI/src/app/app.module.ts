@@ -9,7 +9,12 @@ import { FormsModule } from '@angular/forms';
 
 import { TiposService } from './services/tipos.service';
 import { CategoriasService } from './services/categorias.service';
-import { ListagemCategoriaComponent, DialogExclusaoCategoriasComponent } from './components/categoria/listagem-categoria/listagem-categoria.component';
+import { FuncoesService } from './services/funcoes.service';
+
+import {
+  ListagemCategoriaComponent,
+  DialogExclusaoCategoriasComponent,
+} from './components/categoria/listagem-categoria/listagem-categoria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,17 +27,13 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AtualizarCategoriaComponent } from './components/categoria/atualizar-categoria/atualizar-categoria.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-
-
-
-
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { ListagemFuncoesComponent, DialogExclusaoFuncoesComponent } from './components/funcao/listagem-funcoes/listagem-funcoes.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     ListagemCategoriaComponent,
     NovaCategoriaComponent,
     AtualizarCategoriaComponent,
-    DialogExclusaoCategoriasComponent
+    DialogExclusaoCategoriasComponent,
+    DialogExclusaoFuncoesComponent,
+    ListagemFuncoesComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,9 +67,14 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatPaginatorModule,
     MatSortModule,
     MatSnackBarModule,
-    MatProgressBarModule
+    MatProgressBarModule,
   ],
-  providers: [TiposService, CategoriasService, HttpClientModule],
+  providers: [
+    TiposService,
+    CategoriasService,
+    FuncoesService,
+    HttpClientModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -12,7 +12,7 @@ const routes: Routes = [
     path : 'categorias/novacategorias', component : NovaCategoriaComponent
   },
   {
-    path : 'categorias/atualizarcategorias/:', component : AtualizarCategoriaComponent
+    path : 'categorias/atualizarcategorias/:id', component : AtualizarCategoriaComponent
   }
 ];
 

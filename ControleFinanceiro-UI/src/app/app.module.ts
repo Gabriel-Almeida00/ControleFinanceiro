@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { TiposService } from './services/tipos.service';
 import { CategoriasService } from './services/categorias.service';
-import { ListagemCategoriaComponent } from './components/categoria/listagem-categoria/listagem-categoria.component';
+import { ListagemCategoriaComponent, DialogExclusaoCategoriasComponent } from './components/categoria/listagem-categoria/listagem-categoria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +21,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AtualizarCategoriaComponent } from './components/categoria/atualizar-categoria/atualizar-categoria.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { AtualizarCategoriaComponent } from './components/categoria/atualizar-ca
     ListagemCategoriaComponent,
     NovaCategoriaComponent,
     AtualizarCategoriaComponent,
+    DialogExclusaoCategoriasComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { AtualizarCategoriaComponent } from './components/categoria/atualizar-ca
     MatDividerModule,
     MatSelectModule,
     MatGridListModule,
+    MatDialogModule
   ],
   providers: [TiposService, CategoriasService, HttpClientModule],
   bootstrap: [AppComponent],

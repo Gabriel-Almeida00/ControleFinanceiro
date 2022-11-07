@@ -1,5 +1,5 @@
+
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -48,6 +48,13 @@ export class AtualizarCategoriaComponent implements OnInit {
   }
   get propriedade() {
     return this.formulario.controls;
+  }
+
+  EnviarFormulario(): void{
+    const categoria = this.formulario.value;
+    this.categoriasService.AtualizarCategoria(this.categoriaId, categoria).subscribe(resultado => {
+      this.router.navigate(['categorias/listagemcategorias']);
+    });
   }
 
   VoltarListagem(): void {

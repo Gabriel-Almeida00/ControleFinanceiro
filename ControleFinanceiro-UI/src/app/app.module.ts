@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { TiposService } from './services/tipos.service';
 import { CategoriasService } from './services/categorias.service';
@@ -22,6 +23,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AtualizarCategoriaComponent } from './components/categoria/atualizar-categoria/atualizar-categoria.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 
 
@@ -49,7 +53,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDividerModule,
     MatSelectModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    MatAutocompleteModule,
+    MatPaginatorModule
   ],
   providers: [TiposService, CategoriasService, HttpClientModule],
   bootstrap: [AppComponent],

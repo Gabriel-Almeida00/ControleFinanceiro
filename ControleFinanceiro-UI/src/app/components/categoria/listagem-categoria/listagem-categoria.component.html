@@ -5,11 +5,36 @@
         <h2 class="titulo">Categorias cadastradas</h2>
       </mat-grid-tile>
       <mat-grid-tile>
-        <button mat-stroked-button color="primary" routerLink="/categorias/novacategorias">
+        <button
+          mat-stroked-button
+          color="primary"
+          routerLink="/categorias/novacategorias"
+        >
           Nova categoria
         </button>
       </mat-grid-tile>
     </mat-grid-list>
+  </div>
+
+  <div class="divAutoComplete">
+    <form>
+      <mat-form-field class="autoCompleteInput">
+        <input
+          type="text"
+          placeholder="Digite o que você procura"
+          matInput
+          [formControl]="autoCompleteInput"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let nome of nomesCategorias | async"
+            [value]="nome"
+            >{{ nome }}</mat-option
+          >
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
   </div>
 
   <table mat-table [dataSource]="categorias" class="mat-elevation-z8 tabela">
@@ -33,8 +58,21 @@
     <ng-container matColumnDef="acoes">
       <th mat-header-cell *matHeaderCellDef>Ações</th>
       <td mat-cell *matCellDef="let categoria">
-        <button mat-mini-fab color="primary" [routerLink]="['/categorias/atualizarcategorias', categoria.categoriaId]"><mat-icon>edit</mat-icon></button>
-        <button mat-mini-fab color="warn"  (click)="AbrirDialog(categoria.categoriaId, categoria.nome)">
+        <button
+          mat-mini-fab
+          color="primary"
+          [routerLink]="[
+            '/categorias/atualizarcategorias',
+            categoria.categoriaId
+          ]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          color="warn"
+          (click)="AbrirDialog(categoria.categoriaId, categoria.nome)"
+        >
           <mat-icon>delete_forever</mat-icon>
         </button>
       </td>

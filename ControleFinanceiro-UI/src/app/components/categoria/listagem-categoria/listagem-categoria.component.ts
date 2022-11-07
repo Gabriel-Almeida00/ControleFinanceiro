@@ -2,6 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { CategoriasService } from 'src/app/services/categorias.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { FormControl } from '@angular/forms';
+import { map, Observable, startWith } from 'rxjs';
 
 @Component({
   selector: 'app-listagem-categoria',
@@ -11,6 +13,9 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ListagemCategoriaComponent implements OnInit {
   categorias = new MatTableDataSource<any>();
   displayedColumns: string[] | undefined;
+  autoCompleteInput = new FormControl();
+  opcoesCategorias: string[] = [];
+  nomesCategorias: Observable<string[]> | undefined;
 
   constructor(
     private categoriasService: CategoriasService,
@@ -19,10 +24,17 @@ export class ListagemCategoriaComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoriasService.PegarTodos().subscribe((resultado) => {
+      resultado.forEach((categoria) => {
+        this.opcoesCategorias.push(categoria.nome);
+      });
       this.categorias.data = resultado;
     });
 
     this.displayedColumns = this.ExibirColunas();
+    this.nomesCategorias = this.autoCompleteInput.valueChanges.pipe(
+      startWith(''),
+      map((nome) => this.FiltrarNomes(nome))
+    );
   }
 
   ExibirColunas(): string[] {
@@ -48,11 +60,30 @@ export class ListagemCategoriaComponent implements OnInit {
         }
       });
   }
+  FiltrarNomes(nome: string): string[] {
+    if (nome.trim().length >= 4) {
+      this.categoriasService
+        .FiltrarCategorias(nome.toLowerCase())
+        .subscribe((resultado) => {
+          this.categorias.data = resultado;
+        });
+    } else {
+      if (nome === '') {
+        this.categoriasService.PegarTodos().subscribe((resultado) => {
+          this.categorias.data = resultado;
+        });
+      }
+    }
+
+    return this.opcoesCategorias.filter((categoria) =>
+      categoria.toLowerCase().includes(nome.toLowerCase())
+    );
+  }
 }
 
 @Component({
   selector: 'app-dialog-exclusao-categorias',
-  templateUrl: 'dialog-exclusao-categorias.html'
+  templateUrl: 'dialog-exclusao-categorias.html',
 })
 export class DialogExclusaoCategoriasComponent {
   constructor(

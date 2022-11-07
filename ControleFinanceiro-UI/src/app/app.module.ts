@@ -25,6 +25,11 @@ import { AtualizarCategoriaComponent } from './components/categoria/atualizar-ca
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 
 
 
@@ -56,7 +61,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDialogModule,
     FormsModule,
     MatAutocompleteModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule,
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   providers: [TiposService, CategoriasService, HttpClientModule],
   bootstrap: [AppComponent],

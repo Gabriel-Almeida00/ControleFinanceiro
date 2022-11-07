@@ -153,3 +153,6 @@ C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinan
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll

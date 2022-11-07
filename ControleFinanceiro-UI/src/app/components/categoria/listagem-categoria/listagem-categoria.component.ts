@@ -1,21 +1,31 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { CategoriasService } from 'src/app/services/categorias.service';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { startWith, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
-import { map, Observable, startWith } from 'rxjs';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CategoriasService } from './../../../services/categorias.service';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatProgressBar } from '@angular/material/progress-bar';
 
 @Component({
-  selector: 'app-listagem-categoria',
+  selector: 'app-listagem-categorias',
   templateUrl: './listagem-categoria.component.html',
   styleUrls: ['./listagem-categoria.component.css'],
 })
 export class ListagemCategoriaComponent implements OnInit {
   categorias = new MatTableDataSource<any>();
-  displayedColumns: string[] | undefined;
+  displayedColumns!: string[];
   autoCompleteInput = new FormControl();
   opcoesCategorias: string[] = [];
-  nomesCategorias: Observable<string[]> | undefined;
+  nomesCategorias!: Observable<string[]>;
+
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
+  @ViewChild(MatSort, { static: true })
+  sort!: MatSort;
 
   constructor(
     private categoriasService: CategoriasService,
@@ -27,10 +37,14 @@ export class ListagemCategoriaComponent implements OnInit {
       resultado.forEach((categoria) => {
         this.opcoesCategorias.push(categoria.nome);
       });
+
       this.categorias.data = resultado;
+      this.categorias.paginator = this.paginator;
+      this.categorias.sort = this.sort;
     });
 
     this.displayedColumns = this.ExibirColunas();
+
     this.nomesCategorias = this.autoCompleteInput.valueChanges.pipe(
       startWith(''),
       map((nome) => this.FiltrarNomes(nome))
@@ -60,6 +74,7 @@ export class ListagemCategoriaComponent implements OnInit {
         }
       });
   }
+
   FiltrarNomes(nome: string): string[] {
     if (nome.trim().length >= 4) {
       this.categoriasService
@@ -88,12 +103,19 @@ export class ListagemCategoriaComponent implements OnInit {
 export class DialogExclusaoCategoriasComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public dados: any,
-    private categoriasService: CategoriasService
+    private categoriasService: CategoriasService,
+    private snackBar : MatSnackBar
   ) {}
 
   ExcluirCategoria(categoriaId: number): void {
     this.categoriasService
       .ExcluirCategoria(categoriaId)
-      .subscribe((resultado) => {});
+      .subscribe((resultado) => {
+        this.snackBar.open(resultado.mensagem, "", {
+          duration: 2000,
+          horizontalPosition: 'right',
+          verticalPosition: 'top'
+        });
+      });
   }
 }

@@ -1,4 +1,5 @@
 using ControleFinanceiro.API.Validacoes;
+using ControleFinanceiro.API.ViewModels;
 using ControleFinanceiro.DAL;
 using ControleFinanceiro.DAL.Interfaces;
 using ControleFinanceiro.DAL.Repositorios;
@@ -45,6 +46,8 @@ namespace ControleFinanceiro.API
 
 
             services.AddTransient<IValidator<Categoria>,CategoriaValidator>();
+            services.AddTransient<IValidator<FuncoesViewModel>, FuncoesViewModelValidator>();
+            services.AddTransient<IValidator<RegistroViewModel>, RegistroViewModelValidator>();
 
             services.AddCors();
 

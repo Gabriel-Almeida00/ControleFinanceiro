@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NPxDZMob3lrXw1BhpyMRtGcc7FV6DuRV1jpA4z9DLhbO8Px95eiElD9DXs8hjmmzFixXPtK9w0tm7bRTbbgS/w==",
+  "dgSpecHash": "/c7+KgquVS8BHQxPL+L+tsoQqahCVt+UI+vK8YQSIe2hydo8n442OgVUF/Aoc5WFM+l2DZeWQlZtyKVMTqysEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Gabriel\\Desktop\\ControleFinanceiro\\ControleFinanceiro.API\\ControleFinanceiro.API\\ControleFinanceiro.API.csproj",
   "expectedPackageFiles": [
@@ -202,7 +202,8 @@
     "C:\\Users\\Gabriel\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Gabriel\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Gabriel\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Gabriel\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\Gabriel\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.31\\microsoft.netcore.app.host.win-x64.3.1.31.nupkg.sha512"
   ],
   "logs": []
 }

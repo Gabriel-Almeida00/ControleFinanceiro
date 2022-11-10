@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ControleFinanceiro.DAL;
 using ControleFinanceiro.DAL.Interfaces;
 using System.IO;
 using ControleFinanceiro.API.ViewModels;
@@ -100,7 +101,7 @@ namespace ControleFinanceiro.API.Controllers
                 if (usuarioCriado.Succeeded)
                 {
                     await _usuarioRepositorio.IncluirUsuarioEmFuncao(usuario, funcaoUsuario);
-                   
+                  
                     await _usuarioRepositorio.LogarUsuario(usuario, false);
 
                     return Ok(new
@@ -133,17 +134,15 @@ namespace ControleFinanceiro.API.Controllers
             {
                 PasswordHasher<Usuario> passwordHasher = new PasswordHasher<Usuario>();
                 if (passwordHasher.VerifyHashedPassword(usuario, usuario.PasswordHash, model.Senha) != PasswordVerificationResult.Failed)
-                {
-                    var funcoesUsuario = await _usuarioRepositorio.PegarFuncoesUsuario(usuario);
-                   
+                {                 
                     await _usuarioRepositorio.LogarUsuario(usuario, false);
 
                     return Ok(new
                     {
                         emailUsuarioLogado = usuario.Email,
-                        usuarioId = usuario.Id,
-                      
-                    });
+                        usuarioId = usuario.Id
+
+                    }) ;
                 }
 
                 return NotFound("Usuário e / ou senha inválidos");
@@ -151,6 +150,7 @@ namespace ControleFinanceiro.API.Controllers
 
             return NotFound("Usuário e / ou senha inválidos");
         }
+
 
         [HttpGet("RetornarFotoUsuario/{usuarioId}")]
         public async Task<dynamic> RetornarFotoUsuario(string usuarioId)

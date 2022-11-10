@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarUsuarioComponent implements OnInit {
   formulario: any;
-  foto!: File;
+  foto: any = null;
   erros!: string[];
 
   constructor(
@@ -57,6 +57,16 @@ export class RegistrarUsuarioComponent implements OnInit {
     return this.formulario.controls;
   }
 
+  SelecionarFoto(fileInput: any): void {
+    this.foto = fileInput.target.files[0] as File;
+    const reader = new FileReader();
+    reader.onload = function (e: any) {
+
+    };
+
+    reader.readAsDataURL(this.foto);
+  }
+
   EnviarFormulario(): void {
     this.erros = [];
     const usuario = this.formulario.value;
@@ -81,9 +91,7 @@ export class RegistrarUsuarioComponent implements OnInit {
           const usuarioId = dados.usuarioId;
           const tokenUsuarioLogado = dados.tokenUsuarioLogado;
           localStorage.setItem('EmailUsuarioLogado', emailUsuarioLogado);
-          localStorage.setItem('UsuarioId', usuarioId);
-          localStorage.setItem('TokenUsuarioLogado', tokenUsuarioLogado);
-          this.router.navigate(['/dashboard/index']);
+          this.router.navigate(['categorias/listagemcategorias']);
         },
         (err) => {
           if (err.status === 400) {

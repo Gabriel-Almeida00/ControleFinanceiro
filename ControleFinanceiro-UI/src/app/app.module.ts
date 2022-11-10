@@ -37,7 +37,8 @@ import { ListagemFuncoesComponent, DialogExclusaoFuncoesComponent } from './comp
 import { NovaFuncaoComponent } from './components/funcao/nova-funcao/nova-funcao.component';
 import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/atualizar-funcao.component';
 import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registrar-usuario/registrar-usuario.component';
-import { FlexLayoutModule} from '@angular/flex-layout'
+import { FlexLayoutModule} from '@angular/flex-layout';
+import { NgxMaskModule} from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { FlexLayoutModule} from '@angular/flex-layout'
     MatSortModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     TiposService,

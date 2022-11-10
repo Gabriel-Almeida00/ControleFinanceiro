@@ -36,6 +36,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { ListagemFuncoesComponent, DialogExclusaoFuncoesComponent } from './components/funcao/listagem-funcoes/listagem-funcoes.component';
 import { NovaFuncaoComponent } from './components/funcao/nova-funcao/nova-funcao.component';
 import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/atualizar-funcao.component';
+import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registrar-usuario/registrar-usuario.component';
+import { FlexLayoutModule} from '@angular/flex-layout'
 
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/a
     ListagemFuncoesComponent,
     NovaFuncaoComponent,
     AtualizarFuncaoComponent,
+    RegistrarUsuarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/a
     MatSortModule,
     MatSnackBarModule,
     MatProgressBarModule,
+    FlexLayoutModule
   ],
   providers: [
     TiposService,

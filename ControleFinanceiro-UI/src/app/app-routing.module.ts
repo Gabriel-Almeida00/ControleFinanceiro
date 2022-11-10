@@ -7,6 +7,7 @@ import { ListagemFuncoesComponent } from './components/funcao/listagem-funcoes/l
 import { NovaFuncaoComponent } from './components/funcao/nova-funcao/nova-funcao.component';
 import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/atualizar-funcao.component';
 import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registrar-usuario/registrar-usuario.component';
+import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/login-usuario.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,9 @@ const routes: Routes = [
   },
   {
     path : 'usuarios/registrarusuario', component : RegistrarUsuarioComponent
+  },
+  {
+    path : 'usuarios/loginusuario', component : LoginUsuarioComponent
   }
 ];
 

@@ -5,9 +5,11 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleFinanceiro.API", "ControleFinanceiro.API\ControleFinanceiro.API.csproj", "{584D63EE-E24E-4653-9741-9DBAA8E91A03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlerFinanceiro.BLL", "..\ControlerFinanceiro.BLL\ControlerFinanceiro.BLL.csproj", "{9FA752DF-6349-4AF9-9D1E-68BE7B339842}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControlerFinanceiro.BLL", "..\ControlerFinanceiro.BLL\ControlerFinanceiro.BLL.csproj", "{9FA752DF-6349-4AF9-9D1E-68BE7B339842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleFinanceiro.DAL", "..\ControleFinanceiro.DAL\ControleFinanceiro.DAL.csproj", "{1382A49D-3124-4EBC-BC6B-A8E874B41614}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControleFinanceiro.DAL", "..\ControleFinanceiro.DAL\ControleFinanceiro.DAL.csproj", "{1382A49D-3124-4EBC-BC6B-A8E874B41614}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A80F581D-2471-4264-B491-57B40C2167FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

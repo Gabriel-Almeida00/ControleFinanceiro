@@ -39,6 +39,7 @@ import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/a
 import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registrar-usuario/registrar-usuario.component';
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { NgxMaskModule} from 'ngx-mask';
+import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/login-usuario.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { NgxMaskModule} from 'ngx-mask';
     NovaFuncaoComponent,
     AtualizarFuncaoComponent,
     RegistrarUsuarioComponent,
+    LoginUsuarioComponent,
   ],
   imports: [
     BrowserModule,

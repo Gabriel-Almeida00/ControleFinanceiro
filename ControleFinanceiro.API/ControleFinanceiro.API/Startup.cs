@@ -7,6 +7,7 @@ using ControleFinanceiro.DAL.Repositorios;
 using ControlerFinanceiro.BLL.Models;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,10 +17,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ControleFinanceiro.API
@@ -60,6 +63,28 @@ namespace ControleFinanceiro.API
                 diretorio.RootPath = "ControleFinanceiro-UI";
             });
 
+            var key = Encoding.ASCII.GetBytes(Settings.ChaveSecreta);
+
+            services.AddAuthentication(opcoes =>
+            {
+                opcoes.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opcoes.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+               .AddJwtBearer(opcoes =>
+               {
+                   opcoes.RequireHttpsMetadata = false;
+                   opcoes.SaveToken = true;
+                   opcoes.TokenValidationParameters = new TokenValidationParameters
+                   {
+                       ValidateIssuerSigningKey = true,
+                       IssuerSigningKey = new SymmetricSecurityKey(key),
+                       ValidateIssuer = false,
+                       ValidateAudience = false
+                   };
+               });
+
+
+
             services.AddControllers()
                 .AddFluentValidation()
                 .AddJsonOptions(opcoes =>
@@ -85,6 +110,8 @@ namespace ControleFinanceiro.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

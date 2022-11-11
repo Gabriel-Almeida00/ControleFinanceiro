@@ -156,3 +156,4 @@ C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinan
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Gabriel\Desktop\ControleFinanceiro\ControleFinanceiro.API\ControleFinanceiro.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

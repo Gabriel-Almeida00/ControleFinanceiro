@@ -91,6 +91,8 @@ export class RegistrarUsuarioComponent implements OnInit {
           const usuarioId = dados.usuarioId;
           const tokenUsuarioLogado = dados.tokenUsuarioLogado;
           localStorage.setItem('EmailUsuarioLogado', emailUsuarioLogado);
+          localStorage.setItem('UsuarioId', usuarioId);
+          localStorage.setItem('TokenUsuarioLogado', tokenUsuarioLogado);
           this.router.navigate(['categorias/listagemcategorias']);
         },
         (err) => {

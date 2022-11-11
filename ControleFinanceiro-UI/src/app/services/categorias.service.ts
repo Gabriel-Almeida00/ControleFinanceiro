@@ -6,17 +6,18 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('TokenUsuarioLogado')}`
   }),
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriasService {
-
   url = 'api/Categorias';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
+
   PegarTodos(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(this.url);
   }
@@ -45,6 +46,16 @@ export class CategoriasService {
 
   FiltrarCategorias(nomeCategoria: string): Observable<Categoria[]> {
     const apiUrl = `${this.url}/FiltrarCategorias/${nomeCategoria}`;
+    return this.http.get<Categoria[]>(apiUrl);
+  }
+
+  FiltrarCategoriasDespesas(): Observable<Categoria[]>{
+    const apiUrl = `${this.url}/FiltrarCategoriasDespesas`;
+    return this.http.get<Categoria[]>(apiUrl);
+  }
+
+  FiltrarCategoriasGanhos(): Observable<Categoria[]>{
+    const apiUrl = `${this.url}/FiltrarCategoriasGanhos`;
     return this.http.get<Categoria[]>(apiUrl);
   }
 }

@@ -40,7 +40,18 @@ import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registr
 import { FlexLayoutModule} from '@angular/flex-layout';
 import { NgxMaskModule} from 'ngx-mask';
 import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/login-usuario.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { DashboardComponent } from './components/Dashboard/dashboard/dashboard.component';
+import { HeaderComponent } from './components/Dashboard/header/header.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
+
+
+export function PegarTokenUsuario() {
+  return localStorage.getItem('TokenUsuarioLogado');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +65,8 @@ import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/
     AtualizarFuncaoComponent,
     RegistrarUsuarioComponent,
     LoginUsuarioComponent,
+    DashboardComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,7 +92,17 @@ import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/
     MatSnackBarModule,
     MatProgressBarModule,
     FlexLayoutModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
     NgxMaskModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: PegarTokenUsuario,
+        allowedDomains: ['localhost:5000'],
+        disallowedRoutes: [],
+      },
+    }),
   ],
   providers: [
     TiposService,

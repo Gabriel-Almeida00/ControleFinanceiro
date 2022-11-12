@@ -10,6 +10,7 @@ import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registr
 import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/login-usuario.component';
 import { DashboardComponent } from './components/Dashboard/dashboard/dashboard.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
       {
         path: 'funcoes/atualizarfuncao/:id',
         component: AtualizarFuncaoComponent,
+      },
+      {
+        path: 'cartoes/novocartao',
+        component: NovoCartaoComponent,
       },
     ],
   },

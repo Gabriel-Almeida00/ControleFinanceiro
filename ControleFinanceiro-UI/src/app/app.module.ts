@@ -51,6 +51,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CartoesService } from './services/cartoes.service';
+import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -70,6 +71,7 @@ export function PegarTokenUsuario() {
     LoginUsuarioComponent,
     DashboardComponent,
     HeaderComponent,
+    NovoCartaoComponent,
   ],
   imports: [
     BrowserModule,

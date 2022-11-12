@@ -50,6 +50,7 @@ import { HeaderComponent } from './components/Dashboard/header/header.component'
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { CartoesService } from './services/cartoes.service';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -113,6 +114,7 @@ export function PegarTokenUsuario() {
     FuncoesService,
     AuthGuardService,
     HttpClientModule,
+    CartoesService
   ],
   bootstrap: [AppComponent],
 })

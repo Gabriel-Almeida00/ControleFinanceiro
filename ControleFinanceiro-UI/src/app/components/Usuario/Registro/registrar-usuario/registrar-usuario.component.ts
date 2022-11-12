@@ -60,7 +60,9 @@ export class RegistrarUsuarioComponent implements OnInit {
   SelecionarFoto(fileInput: any): void {
     this.foto = fileInput.target.files[0] as File;
     const reader = new FileReader();
-    reader.onload = function (e: any) {
+    reader.onload = function (e: any){
+    document.getElementById('foto')?.removeAttribute('hidden');
+    document.getElementById('foto')?.setAttribute('src', e.target.result);
 
     };
 

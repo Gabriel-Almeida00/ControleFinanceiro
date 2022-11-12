@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { TiposService } from './services/tipos.service';
 import { CategoriasService } from './services/categorias.service';
 import { FuncoesService } from './services/funcoes.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 import {
   ListagemCategoriaComponent,
@@ -33,21 +34,22 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { ListagemFuncoesComponent, DialogExclusaoFuncoesComponent } from './components/funcao/listagem-funcoes/listagem-funcoes.component';
+import {
+  ListagemFuncoesComponent,
+  DialogExclusaoFuncoesComponent,
+} from './components/funcao/listagem-funcoes/listagem-funcoes.component';
 import { NovaFuncaoComponent } from './components/funcao/nova-funcao/nova-funcao.component';
 import { AtualizarFuncaoComponent } from './components/funcao/atualizar-funcao/atualizar-funcao.component';
 import { RegistrarUsuarioComponent } from './components/Usuario/Registro/registrar-usuario/registrar-usuario.component';
-import { FlexLayoutModule} from '@angular/flex-layout';
-import { NgxMaskModule} from 'ngx-mask';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxMaskModule } from 'ngx-mask';
 import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/login-usuario.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { DashboardComponent } from './components/Dashboard/dashboard/dashboard.component';
 import { HeaderComponent } from './components/Dashboard/header/header.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
-import {MatToolbarModule} from '@angular/material/toolbar';
-
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -94,6 +96,7 @@ export function PegarTokenUsuario() {
     FlexLayoutModule,
     MatSidenavModule,
     MatToolbarModule,
+
     MatListModule,
     NgxMaskModule.forRoot(),
     JwtModule.forRoot({
@@ -108,6 +111,7 @@ export function PegarTokenUsuario() {
     TiposService,
     CategoriasService,
     FuncoesService,
+    AuthGuardService,
     HttpClientModule,
   ],
   bootstrap: [AppComponent],

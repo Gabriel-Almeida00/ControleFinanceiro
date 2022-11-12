@@ -29,14 +29,14 @@
       </mat-list-item>
       <mat-divider></mat-divider>
 
-      <div >
+      <div *ngIf="isAdministrador">
         <mat-list-item routerLink="/categorias/listagemcategorias">
           <mat-icon>reorder</mat-icon> Categorias
         </mat-list-item>
         <mat-divider></mat-divider>
       </div>
 
-      <div >
+      <div *ngIf="isAdministrador">
         <mat-list-item routerLink="/funcoes/listagemfuncoes">
           <mat-icon>supervised_user_circle</mat-icon> Funções
         </mat-list-item>

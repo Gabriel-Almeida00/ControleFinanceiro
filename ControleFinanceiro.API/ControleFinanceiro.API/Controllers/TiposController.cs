@@ -12,6 +12,7 @@ using ControlerFinanceiro.BLL.Models;
 
 namespace ControleFinanceiro.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TiposController : ControllerBase

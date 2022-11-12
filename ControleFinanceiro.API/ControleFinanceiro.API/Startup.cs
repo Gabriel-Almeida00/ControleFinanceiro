@@ -45,6 +45,7 @@ namespace ControleFinanceiro.API
 
             services.ConfigurarSenhaUsuario();
 
+            services.AddScoped<ICartaoRepositorio, CartaoRepositorio>();
             services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
             services.AddScoped<ITipoRepositorio, TipoRepositorio>();
             services.AddScoped<IFuncaoRepositorio, FuncaoRepositorio>();

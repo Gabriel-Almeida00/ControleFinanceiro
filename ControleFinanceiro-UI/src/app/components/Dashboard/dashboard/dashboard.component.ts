@@ -1,3 +1,4 @@
+import { AuthGuardService } from './../../../services/auth-guard.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  isAdministrador!: boolean;
+
+  constructor(private authGuard: AuthGuardService) { }
 
   ngOnInit(): void {
+    this.isAdministrador = this.authGuard.VerificarAdministrador();
   }
 
 }

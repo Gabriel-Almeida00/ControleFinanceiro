@@ -53,6 +53,7 @@ namespace ControleFinanceiro.API
 
 
             services.AddTransient<IValidator<Categoria>,CategoriaValidator>();
+            services.AddTransient<IValidator<Cartao>, CartaoValidator>();
             services.AddTransient<IValidator<FuncoesViewModel>, FuncoesViewModelValidator>();
             services.AddTransient<IValidator<RegistroViewModel>, RegistroViewModelValidator>();
             services.AddTransient<IValidator<LoginViewModel>, LoginViewModelValidator>();

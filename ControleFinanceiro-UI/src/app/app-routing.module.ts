@@ -11,6 +11,7 @@ import { LoginUsuarioComponent } from './components/Usuario/Login/login-usuario/
 import { DashboardComponent } from './components/Dashboard/dashboard/dashboard.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
+import { ListagemCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
       {
         path: 'cartoes/novocartao',
         component: NovoCartaoComponent,
+      },
+      {
+        path: 'cartoes/listagemcartoes',
+        component: ListagemCartoesComponent,
       },
     ],
   },

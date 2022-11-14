@@ -56,6 +56,9 @@ import { CartoesService } from './services/cartoes.service';
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 import { ListagemCartoesComponent, DialogExclusaoCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
 import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/atualizar-cartao/atualizar-cartao.component';
+import { NovaDespesaComponent } from './components/Despesas/nova-despesa/nova-despesa.component';
+import { ListagemDespesasComponent, DialogExclusaoDespesasComponent } from './components/Despesas/listagem-despesas/listagem-despesas.component';
+import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
 
 
 
@@ -71,6 +74,7 @@ export function PegarTokenUsuario() {
     DialogExclusaoCategoriasComponent,
     DialogExclusaoFuncoesComponent,
     DialogExclusaoCartoesComponent,
+    DialogExclusaoDespesasComponent,
     ListagemFuncoesComponent,
     NovaFuncaoComponent,
     AtualizarFuncaoComponent,
@@ -81,6 +85,9 @@ export function PegarTokenUsuario() {
     NovoCartaoComponent,
     ListagemCartoesComponent,
     AtualizarCartaoComponent,
+    NovaDespesaComponent,
+    ListagemDespesasComponent,
+    AtualizarDespesaComponent,
   ],
   imports: [
     BrowserModule,

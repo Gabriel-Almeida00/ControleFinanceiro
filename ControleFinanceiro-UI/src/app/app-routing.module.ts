@@ -13,6 +13,9 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 import { ListagemCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
 import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/atualizar-cartao/atualizar-cartao.component';
+import { NovaDespesaComponent } from './components/Despesas/nova-despesa/nova-despesa.component';
+import { ListagemDespesasComponent } from './components/Despesas/listagem-despesas/listagem-despesas.component';
+import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
 
 const routes: Routes = [
   {
@@ -55,6 +58,18 @@ const routes: Routes = [
       {
         path: 'cartoes/atualizarcartao/:id',
         component: AtualizarCartaoComponent,
+      },
+      {
+        path: 'despesas/novadespesa',
+        component: NovaDespesaComponent,
+      },
+      {
+        path: 'despesas/listagemdespesas',
+        component: ListagemDespesasComponent,
+      },
+      {
+        path: 'despesas/atualizardespesa/:id',
+        component: AtualizarDespesaComponent,
       },
     ],
   },

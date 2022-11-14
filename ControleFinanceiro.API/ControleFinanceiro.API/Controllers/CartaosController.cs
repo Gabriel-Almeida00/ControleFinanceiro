@@ -9,6 +9,7 @@ using ControleFinanceiro.DAL;
 using ControlerFinanceiro.BLL.Models;
 using ControleFinanceiro.DAL.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using ControleFinanceiro.DAL.Repositorios;
 
 namespace ControleFinanceiro.API.Controllers
 {
@@ -18,7 +19,8 @@ namespace ControleFinanceiro.API.Controllers
     public class CartoesController : ControllerBase
     {
         private readonly ICartaoRepositorio _cartaoRepositorio;
-       
+        private readonly IDespesaRepositorio _despesaRepositorio;
+
 
         public CartoesController(ICartaoRepositorio cartaoRepositorio)
         {
@@ -89,7 +91,9 @@ namespace ControleFinanceiro.API.Controllers
             if (cartao == null)
                 return NotFound();
 
-         
+            IEnumerable<Despesa> despesas = await _despesaRepositorio.PegarDespesasPeloCartaoId(cartao.CartaoId);
+            _despesaRepositorio.ExcluirDespesas(despesas);
+
             await _cartaoRepositorio.Excluir(cartao);
 
 
@@ -98,7 +102,6 @@ namespace ControleFinanceiro.API.Controllers
                 mensagem = $"Cartão número {cartao.Numero} excluído com sucesso"
             });
         }
-
         [HttpGet("FiltrarCartoes/{numeroCartao}")]
         public async Task<IEnumerable<Cartao>> FiltrarCartoes(string numeroCartao)
         {

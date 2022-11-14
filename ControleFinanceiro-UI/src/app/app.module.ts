@@ -11,6 +11,8 @@ import { TiposService } from './services/tipos.service';
 import { CategoriasService } from './services/categorias.service';
 import { FuncoesService } from './services/funcoes.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { DespesasService } from './services/despesas.service';
+import { MesService } from './services/mes.service';
 
 import {
   ListagemCategoriaComponent,
@@ -54,6 +56,8 @@ import { CartoesService } from './services/cartoes.service';
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 import { ListagemCartoesComponent, DialogExclusaoCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
 import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/atualizar-cartao/atualizar-cartao.component';
+
+
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -121,7 +125,9 @@ export function PegarTokenUsuario() {
     FuncoesService,
     AuthGuardService,
     HttpClientModule,
-    CartoesService
+    CartoesService,
+    DespesasService,
+    MesService
   ],
   bootstrap: [AppComponent],
 })

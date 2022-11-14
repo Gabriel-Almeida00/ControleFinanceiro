@@ -17,7 +17,8 @@ import { FormControl } from '@angular/forms';
 export class ListagemCartoesComponent implements OnInit {
   cartoes = new MatTableDataSource<any>();
   displayedColumns!: string[];
-  usuarioId: any = localStorage.getItem('UsuarioId');
+  localusuarioId!: string | null;
+  usuarioId!: string;
   autoCompleteInput = new FormControl();
   opcoesNumeros: string[] = [];
   numeroCartoes!: Observable<string[]>;
@@ -34,6 +35,12 @@ export class ListagemCartoesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.localusuarioId = localStorage.getItem('UsuarioId');
+
+    if (typeof this.localusuarioId === 'string') {
+      this.usuarioId = this.localusuarioId;
+    }
+
     this.cartoesService
       .PegarCartoesPeloUsuarioId(this.usuarioId)
       .subscribe((resultado) => {
@@ -103,7 +110,7 @@ export class ListagemCartoesComponent implements OnInit {
 
 @Component({
   selector: 'app-dialog-exclusao-cartoes',
-  templateUrl: 'dialog-exclusao-cartoes.html' 
+  templateUrl: 'dialog-exclusao-cartoes.html',
 })
 export class DialogExclusaoCartoesComponent {
   constructor(
@@ -114,7 +121,7 @@ export class DialogExclusaoCartoesComponent {
 
   ExcluirCartao(cartaoId: number): void {
     this.cartoesService.ExcluirCartao(cartaoId).subscribe((resultado) => {
-      this.snackBar.open(resultado.mensagem, "", {
+      this.snackBar.open(resultado.mensagem, '', {
         duration: 2000,
         horizontalPosition: 'right',
         verticalPosition: 'top',

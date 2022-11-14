@@ -53,6 +53,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { CartoesService } from './services/cartoes.service';
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
 import { ListagemCartoesComponent, DialogExclusaoCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
+import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/atualizar-cartao/atualizar-cartao.component';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -75,6 +76,7 @@ export function PegarTokenUsuario() {
     HeaderComponent,
     NovoCartaoComponent,
     ListagemCartoesComponent,
+    AtualizarCartaoComponent,
   ],
   imports: [
     BrowserModule,

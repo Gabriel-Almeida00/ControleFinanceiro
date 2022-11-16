@@ -1,5 +1,5 @@
-﻿using ControleFinanceiro.DAL.Interfaces;
-using ControlerFinanceiro.BLL.Models;
+﻿using ControleFinanceiro.BLL.Models;
+using ControleFinanceiro.DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

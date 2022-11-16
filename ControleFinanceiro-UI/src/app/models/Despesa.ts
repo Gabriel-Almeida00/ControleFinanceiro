@@ -1,5 +1,5 @@
 import { Categoria } from './Categoria';
-import { Cartao } from './Cartao';
+import { Cartao } from "./Cartao";
 import { Mes } from './Mes';
 export class Despesa {
     despesaId!: number;

@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ControleFinanceiro.BLL.Models;
+using ControleFinanceiro.DAL.Interfaces;
+using ControlerFinanceiro.BLL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ControleFinanceiro.DAL;
-using ControlerFinanceiro.BLL.Models;
-using ControleFinanceiro.DAL.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using ControleFinanceiro.DAL.Repositorios;
 
 namespace ControleFinanceiro.API.Controllers
 {
@@ -21,11 +20,10 @@ namespace ControleFinanceiro.API.Controllers
         private readonly ICartaoRepositorio _cartaoRepositorio;
         private readonly IDespesaRepositorio _despesaRepositorio;
 
-
-        public CartoesController(ICartaoRepositorio cartaoRepositorio)
+        public CartoesController(ICartaoRepositorio cartaoRepositorio, IDespesaRepositorio despesaRepositorio)
         {
             _cartaoRepositorio = cartaoRepositorio;
-           
+            _despesaRepositorio = despesaRepositorio;
         }
 
         [HttpGet("PegarCartoesPeloUsuarioId/{usuarioId}")]
@@ -102,6 +100,7 @@ namespace ControleFinanceiro.API.Controllers
                 mensagem = $"Cartão número {cartao.Numero} excluído com sucesso"
             });
         }
+
         [HttpGet("FiltrarCartoes/{numeroCartao}")]
         public async Task<IEnumerable<Cartao>> FiltrarCartoes(string numeroCartao)
         {

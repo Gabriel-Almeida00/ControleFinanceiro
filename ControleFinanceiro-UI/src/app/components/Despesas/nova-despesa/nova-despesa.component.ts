@@ -1,28 +1,29 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MesService } from './../../../services/mes.service';
 import { CategoriasService } from './../../../services/categorias.service';
-import { CartoesService } from './../../../services/cartoes.service';
+
 import { DespesasService } from './../../../services/despesas.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Mes } from './../../../models/Mes';
 import { Component, OnInit } from '@angular/core';
-import { Cartao } from 'src/app/models/Cartao';
 import { Categoria } from 'src/app/models/Categoria';
+import { Cartao } from 'src/app/models/Cartao';
+import { CartoesService } from 'src/app/services/cartoes.service';
 
 @Component({
   selector: 'app-nova-despesa',
   templateUrl: './nova-despesa.component.html',
-  styleUrls: ['./nova-despesa.component.css'],
+  styleUrls: ['../listagem-despesas/listagem-despesas.component.css'],
 })
 export class NovaDespesaComponent implements OnInit {
   formulario: any;
   cartoes!: Cartao[];
   categorias!: Categoria[];
   meses!: Mes[];
-  erros!: string[];
   localusuarioId!: string | null;
   usuarioId!: string;
+  erros!: string[];
 
   constructor(
     private router: Router,
@@ -34,6 +35,7 @@ export class NovaDespesaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.erros = [];
 
     if (typeof this.localusuarioId === 'string') {
@@ -63,6 +65,7 @@ export class NovaDespesaComponent implements OnInit {
         Validators.minLength(1),
         Validators.maxLength(50),
       ]),
+
       categoriaId: new FormControl(null, [Validators.required]),
       valor: new FormControl(null, [Validators.required]),
       dia: new FormControl(null, [Validators.required]),

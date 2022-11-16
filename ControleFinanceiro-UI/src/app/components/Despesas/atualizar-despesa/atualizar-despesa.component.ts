@@ -10,7 +10,7 @@ import { Categoria } from 'src/app/models/Categoria';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Despesa } from 'src/app/models/Despesa';
-import { Cartao } from 'src/app/models/Cartao';
+import { Cartao } from "src/app/models/Cartao";
 
 @Component({
   selector: 'app-atualizar-despesa',

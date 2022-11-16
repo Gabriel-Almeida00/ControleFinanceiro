@@ -10,18 +10,18 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ControleFinanceiro.DAL.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20221103204534_criacaoBancoDados")]
-    partial class criacaoBancoDados
+    [Migration("20221114070509_criacaoBD")]
+    partial class criacaoBD
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.7")
+                .HasAnnotation("ProductVersion", "3.1.30")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ControlerFinanceiro.BLL.Models.Cartao", b =>
+            modelBuilder.Entity("ControleFinanceiro.BLL.Models.Cartao", b =>
                 {
                     b.Property<int>("CartaoId")
                         .ValueGeneratedOnAdd()
@@ -93,7 +93,9 @@ namespace ControleFinanceiro.DAL.Migrations
             modelBuilder.Entity("ControlerFinanceiro.BLL.Models.Despesa", b =>
                 {
                     b.Property<int>("DespesaId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("Ano")
                         .HasColumnType("int");
@@ -123,6 +125,8 @@ namespace ControleFinanceiro.DAL.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("DespesaId");
+
+                    b.HasIndex("CartaoId");
 
                     b.HasIndex("CategoriaId");
 
@@ -168,16 +172,16 @@ namespace ControleFinanceiro.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1fd9f639-4f0a-479c-ae10-b803c113e013",
-                            ConcurrencyStamp = "3af374ef-cfd5-4c89-a094-005f5519b833",
+                            Id = "39be25c9-8ea8-4308-a646-47cd203dd35e",
+                            ConcurrencyStamp = "32186538-84c2-49ae-858a-bf4cbdc55f8c",
                             Descricao = "Administrador do sistema",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "ecbeed02-f0d4-492c-a548-64d710ab9c97",
-                            ConcurrencyStamp = "65b6f98a-a4ed-495f-9b2c-f93ec451fd7d",
+                            Id = "cf54bc26-6457-4615-bdb3-75464e65a583",
+                            ConcurrencyStamp = "20831a8c-a974-452f-b265-04c3fa7ae084",
                             Descricao = "Usuário do sistema",
                             Name = "Usuario",
                             NormalizedName = "USUARIO"
@@ -523,7 +527,7 @@ namespace ControleFinanceiro.DAL.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ControlerFinanceiro.BLL.Models.Cartao", b =>
+            modelBuilder.Entity("ControleFinanceiro.BLL.Models.Cartao", b =>
                 {
                     b.HasOne("ControlerFinanceiro.BLL.Models.Usuario", "Usuario")
                         .WithMany("Cartoes")
@@ -543,15 +547,15 @@ namespace ControleFinanceiro.DAL.Migrations
 
             modelBuilder.Entity("ControlerFinanceiro.BLL.Models.Despesa", b =>
                 {
-                    b.HasOne("ControlerFinanceiro.BLL.Models.Categoria", "Categoria")
+                    b.HasOne("ControleFinanceiro.BLL.Models.Cartao", "Cartao")
                         .WithMany("Despesas")
-                        .HasForeignKey("CategoriaId")
+                        .HasForeignKey("CartaoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ControlerFinanceiro.BLL.Models.Cartao", "Cartao")
+                    b.HasOne("ControlerFinanceiro.BLL.Models.Categoria", "Categoria")
                         .WithMany("Despesas")
-                        .HasForeignKey("DespesaId")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

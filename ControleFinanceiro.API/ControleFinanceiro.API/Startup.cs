@@ -1,6 +1,7 @@
 using ControleFinanceiro.API.Extensions;
 using ControleFinanceiro.API.Validacoes;
 using ControleFinanceiro.API.ViewModels;
+using ControleFinanceiro.BLL.Models;
 using ControleFinanceiro.DAL;
 using ControleFinanceiro.DAL.Interfaces;
 using ControleFinanceiro.DAL.Repositorios;

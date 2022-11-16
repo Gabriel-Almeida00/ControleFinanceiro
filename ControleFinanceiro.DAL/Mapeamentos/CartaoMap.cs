@@ -1,4 +1,5 @@
-﻿using ControlerFinanceiro.BLL.Models;
+﻿using ControleFinanceiro.BLL.Models;
+using ControlerFinanceiro.BLL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { Cartao } from 'src/app/models/Cartao';
+import { Cartao } from "src/app/models/Cartao";
 import { CartoesService } from 'src/app/services/cartoes.service';
 
 @Component({

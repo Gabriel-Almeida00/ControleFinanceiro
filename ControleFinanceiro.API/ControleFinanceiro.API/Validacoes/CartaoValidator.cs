@@ -1,5 +1,4 @@
-﻿
-using ControlerFinanceiro.BLL.Models;
+﻿using ControleFinanceiro.BLL.Models;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

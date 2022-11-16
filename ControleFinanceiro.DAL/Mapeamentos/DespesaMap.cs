@@ -21,7 +21,7 @@ namespace ControleFinanceiro.DAL.Mapeamentos
 
             builder.Property(d => d.Ano).IsRequired();
 
-            builder.HasOne(d => d.Cartao).WithMany(d => d.Despesas).HasForeignKey(d => d.DespesaId).IsRequired();
+            builder.HasOne(d => d.Cartao).WithMany(d => d.Despesas).HasForeignKey(d => d.CartaoId).IsRequired();
             builder.HasOne(d => d.Categoria).WithMany(d => d.Despesas).HasForeignKey(d => d.CategoriaId).IsRequired();
             builder.HasOne(d => d.Mes).WithMany(d => d.Despesas).HasForeignKey(d => d.MesId).IsRequired();
             builder.HasOne(d => d.Usuario).WithMany(d => d.Despesas).HasForeignKey(d => d.UsuarioId).IsRequired();

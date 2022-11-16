@@ -95,7 +95,7 @@ export class RegistrarUsuarioComponent implements OnInit {
           localStorage.setItem('EmailUsuarioLogado', emailUsuarioLogado);
           localStorage.setItem('UsuarioId', usuarioId);
           localStorage.setItem('TokenUsuarioLogado', tokenUsuarioLogado);
-          this.router.navigate(['categorias/listagemcartoes']);
+          this.router.navigate(['despesas/novadespesa']);
         },
         (err) => {
           if (err.status === 400) {

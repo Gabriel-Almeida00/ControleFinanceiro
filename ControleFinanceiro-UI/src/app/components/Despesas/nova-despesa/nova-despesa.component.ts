@@ -35,12 +35,13 @@ export class NovaDespesaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-    this.erros = [];
+    this.localusuarioId = localStorage.getItem('UsuarioId');
 
     if (typeof this.localusuarioId === 'string') {
       this.usuarioId = this.localusuarioId;
     }
+
+    this.erros = [];
 
     this.cartoesService
       .PegarCartoesPeloUsuarioId(this.usuarioId)

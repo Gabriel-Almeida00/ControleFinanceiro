@@ -35,7 +35,8 @@ export class ListagemDespesasComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.localusuarioId = localStorage.getItem('UsuarioId');
+    
     if (typeof this.localusuarioId === 'string') {
       this.usuarioId = this.localusuarioId;
     }

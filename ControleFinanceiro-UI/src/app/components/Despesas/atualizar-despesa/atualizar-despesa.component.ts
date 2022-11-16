@@ -41,7 +41,8 @@ export class AtualizarDespesaComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.localusuarioId = localStorage.getItem('UsuarioId');
+    
     if (typeof this.localusuarioId === 'string') {
       this.usuarioId = this.localusuarioId;
     }

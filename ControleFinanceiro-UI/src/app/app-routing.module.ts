@@ -18,6 +18,7 @@ import { ListagemDespesasComponent } from './components/Despesas/listagem-despes
 import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
 import { NovoGanhoComponent } from './components/Ganho/novo-ganho/novo-ganho.component';
 import { ListagemGanhosComponent } from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
+import { AtualizarGanhoComponent } from './components/Ganho/atualizar-ganho/atualizar-ganho.component';
 
 const routes: Routes = [
   {
@@ -82,8 +83,8 @@ const routes: Routes = [
         component: ListagemGanhosComponent,
       },
       {
-        path: 'ganhos/atualzarganho',
-        component: ListagemGanhosComponent,
+        path: 'ganhos/atualizarganho/:id',
+        component: AtualizarGanhoComponent,
       }
     ],
   },

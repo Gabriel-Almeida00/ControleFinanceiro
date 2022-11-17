@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Ganho } from 'src/app/models/Ganho';
 import { Mes } from 'src/app/models/Mes';
-import { MatCardContent } from '@angular/material/card';
 
 @Component({
   selector: 'app-atualizar-ganho',

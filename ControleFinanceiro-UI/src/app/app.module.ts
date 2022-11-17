@@ -1,3 +1,4 @@
+import { GanhosService } from './services/ganhos.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -59,6 +60,9 @@ import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/at
 import { NovaDespesaComponent } from './components/Despesas/nova-despesa/nova-despesa.component';
 import { ListagemDespesasComponent, DialogExclusaoDespesasComponent } from './components/Despesas/listagem-despesas/listagem-despesas.component';
 import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
+import { NovoGanhoComponent } from './components/Ganho/novo-ganho/novo-ganho.component';
+import { ListagemGanhosComponent, DialogExclusaoGanhosComponent} from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
+import { AtualizarGanhoComponent } from './components/Ganho/atualizar-ganho/atualizar-ganho.component';
 
 
 
@@ -75,6 +79,7 @@ export function PegarTokenUsuario() {
     DialogExclusaoFuncoesComponent,
     DialogExclusaoCartoesComponent,
     DialogExclusaoDespesasComponent,
+    DialogExclusaoGanhosComponent,
     ListagemFuncoesComponent,
     NovaFuncaoComponent,
     AtualizarFuncaoComponent,
@@ -88,6 +93,9 @@ export function PegarTokenUsuario() {
     NovaDespesaComponent,
     ListagemDespesasComponent,
     AtualizarDespesaComponent,
+    NovoGanhoComponent,
+    ListagemGanhosComponent,
+    AtualizarGanhoComponent,
   ],
   imports: [
     BrowserModule,
@@ -134,7 +142,8 @@ export function PegarTokenUsuario() {
     HttpClientModule,
     CartoesService,
     DespesasService,
-    MesService
+    MesService,
+    GanhosService
   ],
   bootstrap: [AppComponent],
 })

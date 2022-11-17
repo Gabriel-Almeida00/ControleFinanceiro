@@ -16,6 +16,8 @@ import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/at
 import { NovaDespesaComponent } from './components/Despesas/nova-despesa/nova-despesa.component';
 import { ListagemDespesasComponent } from './components/Despesas/listagem-despesas/listagem-despesas.component';
 import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
+import { NovoGanhoComponent } from './components/Ganho/novo-ganho/novo-ganho.component';
+import { ListagemGanhosComponent } from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
 
 const routes: Routes = [
   {
@@ -71,6 +73,18 @@ const routes: Routes = [
         path: 'despesas/atualizardespesa/:id',
         component: AtualizarDespesaComponent,
       },
+      {
+        path: 'ganhos/novoganho',
+        component: NovoGanhoComponent,
+      },
+      {
+        path: 'ganhos/listagemganhos',
+        component: ListagemGanhosComponent,
+      },
+      {
+        path: 'ganhos/atualzarganho',
+        component: ListagemGanhosComponent,
+      }
     ],
   },
 
@@ -81,7 +95,7 @@ const routes: Routes = [
   {
     path: 'usuarios/loginusuario',
     component: LoginUsuarioComponent,
-  },
+  }
 ];
 
 @NgModule({

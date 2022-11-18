@@ -62,6 +62,7 @@ namespace ControleFinanceiro.API
             services.AddTransient<IValidator<FuncoesViewModel>, FuncoesViewModelValidator>();
             services.AddTransient<IValidator<RegistroViewModel>, RegistroViewModelValidator>();
             services.AddTransient<IValidator<LoginViewModel>, LoginViewModelValidator>();
+            services.AddTransient<IValidator<AtualizarUsuarioViewModel>, AtualizarUsuarioViewModelValidator>();
 
             services.AddCors();
 

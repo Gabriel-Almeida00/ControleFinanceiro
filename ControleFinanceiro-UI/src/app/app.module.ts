@@ -63,6 +63,7 @@ import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despe
 import { NovoGanhoComponent } from './components/Ganho/novo-ganho/novo-ganho.component';
 import { ListagemGanhosComponent, DialogExclusaoGanhosComponent} from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
 import { AtualizarGanhoComponent } from './components/Ganho/atualizar-ganho/atualizar-ganho.component';
+import { AtualizarUsuarioComponent } from './components/Usuario/atualizar-usuario/atualizar-usuario.component';
 
 
 
@@ -96,6 +97,7 @@ export function PegarTokenUsuario() {
     NovoGanhoComponent,
     ListagemGanhosComponent,
     AtualizarGanhoComponent,
+    AtualizarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

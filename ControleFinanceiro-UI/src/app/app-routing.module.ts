@@ -1,3 +1,4 @@
+import { AtualizarUsuarioComponent } from './components/Usuario/atualizar-usuario/atualizar-usuario.component';
 import { NovaCategoriaComponent } from './components/categoria/nova-categoria/nova-categoria.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -85,6 +86,10 @@ const routes: Routes = [
       {
         path: 'ganhos/atualizarganho/:id',
         component: AtualizarGanhoComponent,
+      },
+      {
+        path: 'usuarios/atualizarusuario',
+        component: AtualizarUsuarioComponent,
       }
     ],
   },

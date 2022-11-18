@@ -1,3 +1,4 @@
+import { IndexComponent } from './components/Dashboard/index/index.component';
 import { AtualizarUsuarioComponent } from './components/Usuario/atualizar-usuario/atualizar-usuario.component';
 import { NovaCategoriaComponent } from './components/categoria/nova-categoria/nova-categoria.component';
 import { NgModule } from '@angular/core';
@@ -90,6 +91,10 @@ const routes: Routes = [
       {
         path: 'usuarios/atualizarusuario',
         component: AtualizarUsuarioComponent,
+      },
+      {
+        path: 'dashboard/index',
+        component: IndexComponent,
       }
     ],
   },

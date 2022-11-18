@@ -54,18 +54,28 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CartoesService } from './services/cartoes.service';
+import { DashboardService } from './services/dashboard.service';
+
 import { NovoCartaoComponent } from './components/Cartao/novo-cartao/novo-cartao.component';
-import { ListagemCartoesComponent, DialogExclusaoCartoesComponent } from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
+import {
+  ListagemCartoesComponent,
+  DialogExclusaoCartoesComponent,
+} from './components/Cartao/listagem-cartoes/listagem-cartoes.component';
 import { AtualizarCartaoComponent } from './components/Cartao/AtualizarCartao/atualizar-cartao/atualizar-cartao.component';
 import { NovaDespesaComponent } from './components/Despesas/nova-despesa/nova-despesa.component';
-import { ListagemDespesasComponent, DialogExclusaoDespesasComponent } from './components/Despesas/listagem-despesas/listagem-despesas.component';
+import {
+  ListagemDespesasComponent,
+  DialogExclusaoDespesasComponent,
+} from './components/Despesas/listagem-despesas/listagem-despesas.component';
 import { AtualizarDespesaComponent } from './components/Despesas/atualizar-despesa/atualizar-despesa.component';
 import { NovoGanhoComponent } from './components/Ganho/novo-ganho/novo-ganho.component';
-import { ListagemGanhosComponent, DialogExclusaoGanhosComponent} from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
+import {
+  ListagemGanhosComponent,
+  DialogExclusaoGanhosComponent,
+} from './components/Ganho/listagem-ganhos/listagem-ganhos.component';
 import { AtualizarGanhoComponent } from './components/Ganho/atualizar-ganho/atualizar-ganho.component';
 import { AtualizarUsuarioComponent } from './components/Usuario/atualizar-usuario/atualizar-usuario.component';
-
-
+import { IndexComponent } from './components/Dashboard/index/index.component';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -98,6 +108,7 @@ export function PegarTokenUsuario() {
     ListagemGanhosComponent,
     AtualizarGanhoComponent,
     AtualizarUsuarioComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
@@ -145,7 +156,8 @@ export function PegarTokenUsuario() {
     CartoesService,
     DespesasService,
     MesService,
-    GanhosService
+    GanhosService,
+    DashboardService,
   ],
   bootstrap: [AppComponent],
 })

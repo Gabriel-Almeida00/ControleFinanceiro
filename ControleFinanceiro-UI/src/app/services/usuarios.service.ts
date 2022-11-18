@@ -1,3 +1,4 @@
+import { AtualizarUsuario } from './../models/AtualizarUsuario';
 import { DadosLogin } from './../models/DadosLogin';
 import { DadosRegistro } from './../models/DadosRegistro';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
@@ -43,5 +44,19 @@ export class UsuariosService {
   RetornarFotoUsuario(id: string): Observable<any> {
     const apiUrl = `${this.url}/RetornarFotoUsuario/${id}`;
     return this.http.get<any>(apiUrl);
+  }
+
+  PegarUsuarioPeloId(id: string): Observable<AtualizarUsuario> {
+    const apiUrl = `${this.url}/${id}`;
+    return this.http.get<AtualizarUsuario>(apiUrl);
+  }
+
+  AtualizarUsuario(atualizarUsuario: AtualizarUsuario): Observable<any> {
+    const apiUrl = `${this.url}/AtualizarUsuario`;
+    return this.http.put<AtualizarUsuario>(
+      apiUrl,
+      atualizarUsuario,
+      httpOptions2
+    );
   }
 }

@@ -8,7 +8,7 @@
           fxLayoutGap="20px"
         >
           <div fxFlex="40">
-            <mat-icon style="font-size: 50px">credit_card</mat-icon>
+            <mat-icon style="font-size: 25px">credit_card</mat-icon>
           </div>
           <div fxFlex="60">{{ qtdCartoes }} cartões cadastrados</div>
         </div>
@@ -23,7 +23,7 @@
           fxLayoutGap="20px"
         >
           <div fxFlex="40">
-            <mat-icon style="font-size: 50px">trending_up</mat-icon>
+            <mat-icon style="font-size: 25px">trending_up</mat-icon>
           </div>
           <div fxFlex="60">Ganhos de R$ {{ ganhoTotal }}</div>
         </div>
@@ -38,7 +38,7 @@
           fxLayoutGap="20px"
         >
           <div fxFlex="40">
-            <mat-icon style="font-size: 50px">trending_down</mat-icon>
+            <mat-icon style="font-size: 25px">trending_down</mat-icon>
           </div>
           <div fxFlex="60">Despesas de R$ {{ despesaTotal }}</div>
         </div>
@@ -53,7 +53,7 @@
           fxLayoutGap="20px"
         >
           <div fxFlex="40">
-            <mat-icon style="font-size: 50px">account_balance</mat-icon>
+            <mat-icon style="font-size: 25px">account_balance</mat-icon>
           </div>
           <div fxFlex="60">Saldo de R$ {{ saldo }}</div>
         </div>
@@ -77,7 +77,7 @@
   </mat-form-field>
 </div>
 
-<div class="divGrafico" *ngIf="dados" height="400" width="450">
+<div class="divGrafico" *ngIf="dados" height="200" width="450">
   <canvas
     baseChart
     [datasets]="dados"

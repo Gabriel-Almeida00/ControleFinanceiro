@@ -31,7 +31,7 @@ export class IndexComponent implements OnInit {
     },
   };
   plugins = [];
-  tipo = 'line';
+  tipo:any = 'line';
 
   constructor(private dashboardService: DashboardService) {}
 

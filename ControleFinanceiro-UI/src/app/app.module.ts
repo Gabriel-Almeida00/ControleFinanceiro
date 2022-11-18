@@ -76,6 +76,7 @@ import {
 import { AtualizarGanhoComponent } from './components/Ganho/atualizar-ganho/atualizar-ganho.component';
 import { AtualizarUsuarioComponent } from './components/Usuario/atualizar-usuario/atualizar-usuario.component';
 import { IndexComponent } from './components/Dashboard/index/index.component';
+import { ChartsModule } from 'ng2-charts';
 
 export function PegarTokenUsuario() {
   return localStorage.getItem('TokenUsuarioLogado');
@@ -136,6 +137,7 @@ export function PegarTokenUsuario() {
     FlexLayoutModule,
     MatSidenavModule,
     MatToolbarModule,
+    ChartsModule,
 
     MatListModule,
     NgxMaskModule.forRoot(),
